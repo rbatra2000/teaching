@@ -2,6 +2,12 @@ import logo from './logo.svg';
 import Blog from './blog/Blog';
 import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import './App.css';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 let theme = createMuiTheme({
   palette: {
@@ -11,7 +17,7 @@ let theme = createMuiTheme({
     }
   },
   typography: {
-    "fontFamily": `"Proxima Nova", "Helvetica Neue"`,
+    "fontFamily": `"Helvetica Neue"`, // TODO: Fix font later
     "fontSize": 14,
     "fontWeightLight": 300,
     "fontWeightRegular": 400,
@@ -26,7 +32,7 @@ let theme = createMuiTheme({
     h3: {
       fontWeight: 500
     },
-    h4: { // Not used
+    h4: {
       fontWeight: 400
     },
     h5: {
@@ -43,7 +49,13 @@ theme = responsiveFontSizes(theme);
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
-      <Blog />
+      <Router>
+        <Switch>
+          <Route path="/">
+            <Blog />
+          </Route>
+        </Switch>
+      </Router>
     </MuiThemeProvider>
   );
 }

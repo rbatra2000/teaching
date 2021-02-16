@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 
-@font-face {
+/* @font-face {
 	font-family: 'proxima_nova_rgregular';
 	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
 	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -26,7 +26,7 @@
 		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
 	font-weight: bold;
 	font-style: normal;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

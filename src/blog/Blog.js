@@ -13,9 +13,10 @@ import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import post1 from './blog-post.1.md.js';
+import post1 from './post1.md.js';
 import post2 from './blog-post.2.md.js';
 import post3 from './blog-post.3.md.js';
+import strandbeest from '../assets/strandbeest.jpeg';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -23,46 +24,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const sections = [
-  { title: 'Data Structures', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Coding Interview', url: '#' }
-];
-
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: 'Data Structures',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: 'https://source.unsplash.com/random',
-  imgText: 'main image description',
-  linkText: 'Continue reading…',
+    "For students in 61B, CSM 61B section, or anyone interested in basic data structures",
+  image: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1867&q=80',
+  imgText: 'Data Structures',
+  linkText: 'Learn more',
 };
 
 const featuredPosts = [
   {
-    title: 'Featured post',
-    date: 'Nov 12',
+    title: 'Design',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageText: 'Image Text',
+      'Resources to learn about the design process and other fundamentals',
+    image: strandbeest,
+    imageText: 'Lady Strandbeest',
   },
   {
-    title: 'Post title',
-    date: 'Nov 11',
+    title: 'Coding Interviews',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
+      'Some (hard-learned) lessons about technical interviews and tips on how to succeed',
+    image: 'https://miro.medium.com/max/2400/1*OCqRyD1IlQ45QW1lUlcWjA.png',
     imageText: 'Image Text',
   },
 ];
 
-const posts = [post1, post2, post3];
+const posts = [post1];
 
 const sidebar = {
   title: 'About',
   description:
-    'Hi! This is a small resource guidebook I made for my students, friends, or anyone interested in the same fields as me! Please feel free to reach out through any social links if you would like me to add additional resources.',
+    'Hi! This is a small resource guidebook I made for my students, friends, or anyone interested in these areas! Please feel free to reach out through any social links if you would like me to add additional resources. I structured this guidebook into a blog-style and am still working on building it, so let me know if there are any issues!',
   social: [
     { name: 'Email', icon: EmailIcon, href: 'mailto:ritikbatra@berkeley.edu' },
     { name: 'LinkedIn', icon: LinkedInIcon, href: 'https://www.linkedin.com/in/ritikbatra'},
@@ -78,7 +71,7 @@ export default function Blog() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Ritik's Learning Resources" sections={sections} />
+        <Header title="Ritik's Learning Resources" />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
@@ -87,7 +80,7 @@ export default function Blog() {
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main title="From the firehose" posts={posts} />
+            <Main title="Update Posts" posts={posts} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
@@ -96,6 +89,7 @@ export default function Blog() {
           </Grid>
         </main>
       </Container>
+      <br />
       <Footer title="" description="" />
     </React.Fragment>
   );

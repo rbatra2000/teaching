@@ -46,7 +46,7 @@ export default function Header(props) {
           <SearchIcon />
         </IconButton> */}
       </Toolbar>
-      <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
+      {/* <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
         {sections.map((section) => (
           <Link
             color="inherit"
@@ -59,7 +59,8 @@ export default function Header(props) {
             {section.title}
           </Link>
         ))}
-      </Toolbar>
+      </Toolbar> */}
+      <br />
     </React.Fragment>
   );
 }
